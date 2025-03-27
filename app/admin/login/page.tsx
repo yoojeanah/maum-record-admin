@@ -16,6 +16,7 @@ export default function AdminLoginPage() {
 	  // ✅ MOCK 로그인 로직 (임시)
 	  if (email === 'admin@maumrecord.com' && password === 'admin123') {
 		localStorage.setItem('admin-token', 'mock-token');
+		window.dispatchEvent(new Event('admin-login'));
 		router.push('/admin');
 	  } else {
 		setError('이메일 또는 비밀번호가 올바르지 않습니다.');
